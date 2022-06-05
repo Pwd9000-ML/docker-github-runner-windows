@@ -4,7 +4,7 @@ LABEL Author="Marcel L"
 LABEL Email="pwd9000@hotmail.co.uk"
 LABEL GitHub="https://github.com/Pwd9000-ML"
 
-SHELL ["pwsh", "-Command", "$ErrorActionPreference = 'Stop';"]
+SHELL ["powershell", "-Command", "$ErrorActionPreference = 'Stop';"]
 
 #Set working directory
 WORKDIR /actions-runner
@@ -28,4 +28,4 @@ RUN Invoke-WebRequest -Uri "https://github.com/actions/runner/releases/download/
 #Add GitHub runner configuration startup script
 ADD scripts/start.ps1 .
 ADD scripts/Cleanup-Runners.ps1 .
-ENTRYPOINT ["pwsh.exe", ".\\start.ps1"]
+ENTRYPOINT ["powershell.exe", ".\\start.ps1"]
