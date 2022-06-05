@@ -1,0 +1,13 @@
+---
+version: '3.8'
+
+services:
+  runner:
+    build:
+      context: .
+      args:
+        RUNNER_VERSION: '2.292.0'
+    environment:
+      GH_TOKEN: ${GH_TOKEN}
+      GH_OWNER: 'Pwd9000-ML'
+      GH_REPOSITORY: 'RandomStuff'
