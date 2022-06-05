@@ -1,8 +1,13 @@
 FROM mcr.microsoft.com/windows/servercore:ltsc2019
 
+#input runner version argument
+ARG RUNNER_VERSION
+
 LABEL Author="Marcel L"
 LABEL Email="pwd9000@hotmail.co.uk"
 LABEL GitHub="https://github.com/Pwd9000-ML"
+LABEL BaseImage="servercore:ltsc2019"
+LABEL RunnerVersion=${RUNNER_VERSION}
 
 SHELL ["powershell", "-Command", "$ErrorActionPreference = 'Stop';"]
 
@@ -20,7 +25,6 @@ RUN choco install -y \
     azure-cli
 
 #Download GitHub Runner ed on RUNNER_VERSION argument (Can use: Docker build --build-arg RUNNER_VERSION=x.y.z)
-ARG RUNNER_VERSION=2.292.0
 RUN Invoke-WebRequest -Uri "https://github.com/actions/runner/releases/download/v$env:RUNNER_VERSION/actions-runner-win-x64-$env:RUNNER_VERSION.zip" -OutFile "actions-runner.zip"; \
     Expand-Archive -Path ".\\actions-runner.zip" -DestinationPath '.'; \
     Remove-Item ".\\actions-runner.zip" -Force

@@ -1,0 +1,10 @@
+---
+version: '3.8'
+
+services:
+  runner:
+    image: private.docker.reg:5000/company/pwd9000-github-runner-win:latest
+    environment:
+      GH_TOKEN: ${GH_TOKEN}
+      GH_OWNER: 'Pwd9000-ML'
+      GH_REPOSITORY: 'docker-github-runner-windows'
