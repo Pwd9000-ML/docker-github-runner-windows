@@ -10,4 +10,4 @@ services:
     environment:
       GH_TOKEN: ${GH_TOKEN}
       GH_OWNER: 'Pwd9000-ML'
-      GH_REPOSITORY: 'RandomStuff'
+      GH_REPOSITORY: 'docker-github-runner-windows'
