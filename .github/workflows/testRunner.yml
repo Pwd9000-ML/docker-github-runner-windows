@@ -12,4 +12,3 @@ jobs:
       uses: hashicorp/setup-terraform@v1.3.2
     - name: Display Terraform Version
       run: terraform --version
-      shell: powershell
