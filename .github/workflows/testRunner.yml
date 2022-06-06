@@ -16,6 +16,6 @@ jobs:
     - name: Setup Azure CLI
       run: choco install azure-cli -y
     - name: Display Terraform Version
-      run: terraform --version
-    - name: Display Terraform Version
-      run: az --version
+      run: terraform version
+    - name: Display Azure-CLI Version
+      run: az version
