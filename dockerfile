@@ -1,12 +1,22 @@
+##### BASE IMAGE INFO ######
+#Using servercore insider edition for compacted size.
+#For compatibility on "your" host running docker you may need to use a specific tag.
+#E.g. the host OS version must match the container OS version. 
+#If you want to run a container based on a newer Windows build, make sure you have an equivalent host build. 
+#Otherwise, you can use Hyper-V isolation to run older containers on new host builds. 
+#The default entrypoint is for this image is Cmd.exe. To run the image:
+#docker run mcr.microsoft.com/windows/servercore/insider:10.0.{build}.{revision}
+#tag reference: https://mcr.microsoft.com/en-us/product/windows/servercore/insider/tags
+
 FROM mcr.microsoft.com/windows/servercore/insider:10.0.19035.1
 
-#input runner version argument
+#input GitHub runner version argument
 ARG RUNNER_VERSION
 
 LABEL Author="Marcel L"
 LABEL Email="pwd9000@hotmail.co.uk"
 LABEL GitHub="https://github.com/Pwd9000-ML"
-LABEL BaseImage="servercore:ltsc2019"
+LABEL BaseImage="servercore/insider:10.0.19035.1"
 LABEL RunnerVersion=${RUNNER_VERSION}
 
 SHELL ["powershell", "-Command", "$ErrorActionPreference = 'Stop';"]
