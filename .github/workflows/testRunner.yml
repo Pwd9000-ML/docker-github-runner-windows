@@ -4,11 +4,11 @@ on:
   workflow_dispatch:
 
 jobs:
-  build:
+  testRunner:
     runs-on: [self-hosted]
     steps:
     - uses: actions/checkout@v2
     - name: Setup Terraform
-      uses: hashicorp/setup-terraform@v1.3.2
+      uses: hashicorp/setup-terraform@v2
     - name: Display Terraform Version
-      run: terraform --version
+      run: terraform version
