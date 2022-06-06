@@ -1,4 +1,4 @@
-FROM mcr.microsoft.com/windows/servercore:ltsc2019
+FROM mcr.microsoft.com/windows/servercore/insider:10.0.19035.1
 
 #input runner version argument
 ARG RUNNER_VERSION

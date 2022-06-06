@@ -2,9 +2,12 @@
 
 Repository for building a self hosted GitHub runner as a windows container.
 
-More documentation to come...
+More documentation to come..
 
 ## notes
+
+for more image tags: https://mcr.microsoft.com/en-us/product/windows/servercore/insider/tags
+Win 11 test case
 
 ### commands - Docker
 
