@@ -17,3 +17,5 @@ jobs:
       run: refreshenv
     - name: Display Terraform Version
       run: terraform --version
+    - name: Display Azure-CLI Version
+      run: az --version
