@@ -1,3 +1,9 @@
+#Docker variables
+*.env
+.env
+
+#VSCODE
+
 .vscode/*
 !.vscode/settings.json
 !.vscode/tasks.json

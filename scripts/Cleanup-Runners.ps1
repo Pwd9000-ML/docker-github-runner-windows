@@ -11,7 +11,7 @@ Param (
 #Use --with-token to pass in a PAT token on standard input. The minimum required scopes for the token are: "repo", "read:org".
 #Alternatively, gh will use the authentication token found in environment variables. See gh help environment for more info.
 #To use gh in GitHub Actions, add GH_TOKEN: $ to "env". on Docker run: Docker run -e GH_TOKEN='myPatToken'
-gh auth login
+gh auth login --with-token $pat
 
 #Cleanup#
 #Look for any old/stale dockerNode- registrations to clean up
@@ -32,3 +32,7 @@ Foreach ($runner in $runnerList) {
         Write-Error $_.Exception.Message
     }
 }
+
+#Remove PAT token after cleanup
+$pat=$null
+$env:GH_TOKEN=$null

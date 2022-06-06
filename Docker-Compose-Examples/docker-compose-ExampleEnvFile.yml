@@ -8,7 +8,5 @@ services:
       context: .
       args:
         RUNNER_VERSION: '2.292.0'
-    environment:
-      GH_TOKEN: ${GH_TOKEN}
-      GH_OWNER: ${GH_OWNER} #'Pwd9000-ML'
-      GH_REPOSITORY: ${GH_REPOSITORY} #'docker-github-runner-windows'
+    env_file:
+      - ./variables.env
