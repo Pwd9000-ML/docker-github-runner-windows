@@ -1,4 +1,4 @@
-FROM mcr.microsoft.com/dotnet/framework/runtime:4.8-windowsservercore-2004
+FROM mcr.microsoft.com/windows/servercore/insider:10.0.19035.1
 
 #input runner version argument
 ARG RUNNER_VERSION

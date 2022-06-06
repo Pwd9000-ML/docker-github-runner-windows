@@ -11,10 +11,10 @@ jobs:
         shell: pwsh
     steps:
     - uses: actions/checkout@v2
-    - name: Setup Terraform
-      uses: hashicorp/setup-terraform@v1.3.2
-    - name: Setup Azure CLI
-      run: choco install azure-cli -y
+    - name: Setup Terraform & Azure CLI
+      run: choco install terraform azure-cli -y
+    - name: Refresh Environment
+      run: refreshenv
     - name: Display Terraform Version
       run: terraform version
     - name: Display Azure-CLI Version
