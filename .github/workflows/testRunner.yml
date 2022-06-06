@@ -6,10 +6,16 @@ on:
 jobs:
   testRunner:
     runs-on: [self-hosted]
+    defaults:
+      run:
+        shell: pwsh
     steps:
     - uses: actions/checkout@v2
     - name: Setup Terraform
       uses: hashicorp/setup-terraform@v1.3.2
+    - name: Setup Azure CLI
+      run: choco install azure-cli -y
     - name: Display Terraform Version
       run: terraform --version
-      shell: pwsh
+    - name: Display Terraform Version
+      run: az --version
