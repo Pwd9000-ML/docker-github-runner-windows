@@ -19,10 +19,10 @@ ADD scripts/Install-Choco.ps1 .
 RUN .\Install-Choco.ps1 -Wait; \
     Remove-Item .\Install-Choco.ps1 -Force
 
-#Install Azure-Cli and GitHub-CLI with Chocolatey (add more tooling if needed at build)
+#Install GitHub-CLI and PowerShell Core with Chocolatey (add more tooling if needed at build)
 RUN choco install -y \
     gh \
-    azure-cli
+    powershell-core
 
 #Download GitHub Runner ed on RUNNER_VERSION argument (Can use: Docker build --build-arg RUNNER_VERSION=x.y.z)
 RUN Invoke-WebRequest -Uri "https://github.com/actions/runner/releases/download/v$env:RUNNER_VERSION/actions-runner-win-x64-$env:RUNNER_VERSION.zip" -OutFile "actions-runner.zip"; \
@@ -32,4 +32,4 @@ RUN Invoke-WebRequest -Uri "https://github.com/actions/runner/releases/download/
 #Add GitHub runner configuration startup script
 ADD scripts/start.ps1 .
 ADD scripts/Cleanup-Runners.ps1 .
-ENTRYPOINT ["powershell.exe", ".\\start.ps1"]
+ENTRYPOINT ["pwsh.exe", ".\\start.ps1"]
