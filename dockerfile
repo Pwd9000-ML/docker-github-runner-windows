@@ -36,7 +36,7 @@ RUN choco install -y \
     powershell-core \
     azure-cli
 
-#Download GitHub Runner ed on RUNNER_VERSION argument (Can use: Docker build --build-arg RUNNER_VERSION=x.y.z)
+#Download GitHub Runner based on RUNNER_VERSION argument (Can use: Docker build --build-arg RUNNER_VERSION=x.y.z)
 RUN Invoke-WebRequest -Uri "https://github.com/actions/runner/releases/download/v$env:RUNNER_VERSION/actions-runner-win-x64-$env:RUNNER_VERSION.zip" -OutFile "actions-runner.zip"; \
     Expand-Archive -Path ".\\actions-runner.zip" -DestinationPath '.'; \
     Remove-Item ".\\actions-runner.zip" -Force
