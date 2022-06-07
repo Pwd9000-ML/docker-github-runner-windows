@@ -1,4 +1,4 @@
-#This script invokes GitHub-CLI (Already installed on container)
+#This script invokes GitHub-CLI (Pre-installed on container image)
 Param (
     [Parameter(Mandatory = $false)]
     [string]$owner = $env:GH_OWNER,

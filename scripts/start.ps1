@@ -1,4 +1,4 @@
-#This script invokes GitHub-CLI (Already installed on container)
+#This script invokes GitHub-CLI (Already installed on container image)
 #To use this entrypoint script run: Docker run -e GH_TOKEN='myPatToken' -e GH_OWNER='orgName' -e GH_REPOSITORY='repoName' -d imageName 
 Param (
     [Parameter(Mandatory = $false)]
@@ -25,7 +25,7 @@ try {
     write-host "Registering GitHub Self Hosted Runner on: $owner/$repo"
     ./config.cmd --unattended --url "https://github.com/$owner/$repo" --token $regToken --name $runnerName
 
-    #Remove PAT token after cleanup
+    #Remove PAT token after registering new instance
     $pat=$null
     $env:GH_TOKEN=$null
 
