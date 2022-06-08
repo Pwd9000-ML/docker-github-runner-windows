@@ -8,7 +8,11 @@
 #docker run mcr.microsoft.com/windows/servercore/insider:10.0.{build}.{revision}
 #tag reference: https://mcr.microsoft.com/en-us/product/windows/servercore/insider/tags
 
-FROM mcr.microsoft.com/windows/servercore/insider:10.0.19035.1
+#Win10
+#FROM mcr.microsoft.com/windows/servercore/insider:10.0.19035.1
+
+#Win11
+FROM mcr.microsoft.com/windows/servercore/insider:10.0.20348.1
 
 #input GitHub runner version argument
 ARG RUNNER_VERSION
