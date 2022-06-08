@@ -20,7 +20,7 @@ ARG RUNNER_VERSION
 LABEL Author="Marcel L"
 LABEL Email="pwd9000@hotmail.co.uk"
 LABEL GitHub="https://github.com/Pwd9000-ML"
-LABEL BaseImage="servercore/insider:10.0.19035.1"
+LABEL BaseImage="servercore/insider:10.0.20348.1"
 LABEL RunnerVersion=${RUNNER_VERSION}
 
 SHELL ["powershell", "-Command", "$ErrorActionPreference = 'Stop';"]
