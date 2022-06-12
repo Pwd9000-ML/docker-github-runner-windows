@@ -20,4 +20,4 @@ az container create --resource-group "$aciResourceGroupName" `
     --registry-username "$acrUsername" `
     --registry-password "$acrPassword" `
     --environment-variables GH_TOKEN="$pat" GH_OWNER="$githubOrg" GH_REPOSITORY="$githubRepo" `
-    --os-type "$osType"#Log into Azure
+    --os-type "$osType"
