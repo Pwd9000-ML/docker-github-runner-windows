@@ -12,7 +12,7 @@
 #FROM mcr.microsoft.com/windows/servercore/insider:10.0.19035.1
 
 #Win11
-FROM mcr.microsoft.com/windows/servercore/insider:10.0.26244.5000
+FROM mcr.microsoft.com/windows/servercore/insider:10.0.26304.5000
 
 #input GitHub runner version argument
 ARG RUNNER_VERSION
